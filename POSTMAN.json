@@ -1,0 +1,176 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CRUD",
+		"_postman_id": "0a42e871-6073-861b-14e2-c8bf95c12c0c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /nosql/user",
+			"request": {
+				"url": "http://localhost:3332/nosql/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first\":\"first\",\n\t\"last\":\"last\",\n\t\"avatar\":\"http://avatar.com\",\n\t\"email\":\"user@redhat.com\"\n}"
+				},
+				"description": "Create a user"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /nosql/user/{:id}",
+			"request": {
+				"url": "localhost:3332/nosql/user/5d8266db304c6177380b6114",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get a given user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /nosql/user/{:id}",
+			"request": {
+				"url": "localhost:3332/nosql/user/5d8266db304c6177380b6114",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Delete a given user by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL /nosql/user",
+			"request": {
+				"url": "http://localhost:3332/nosql/user",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDcxOTE2MmE3MWFkZjMzYzY5MDQ5ZTEiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTY3NzIzOTQ3fQ.8T7-uitGq2bK3dMC4QyytUVQS71Bj2sv9DlMLT5G1rQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get all users from DB"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE /nosql/user/:id",
+			"request": {
+				"url": "http://localhost:3332/nosql/user/5d756e5b335ac870a00b871f",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDc1MjI1YTVlODM4ZTI3OWM0OWUzZmEiLCJhdmF0YXIiOiJjYXNlIiwiZW1haWwiOiJuZXdndXlAcmVkaGF0LmNvbSIsImlhdCI6MTU2Nzk1NzU5NCwiZXhwIjoxNTY3OTU4MTk0fQ.Os-M0i-PjFRc2qvypwtm75O5AC66N--0VNg4Qu8fZXkBearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDc1MjI1YTVlODM4ZTI3OWM0OWUzZmEiLCJhdmF0YXIiOiJjYXNlIiwiZW1haWwiOiJuZXdndXlAcmVkaGF0LmNvbSIsImlhdCI6MTU2Nzk1NzU5NCwiZXhwIjoxNTY3OTU4MTk0fQ.Os-M0i-PjFRc2qvypwtm75O5AC66N--0VNg4Qu8fZXk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"changed\":{\"email\":\"robotguy@redhat.com\"}\n }\n     "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET /cache/store/{:key}?{value=AppDevCOE}",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3332/cache/store/name?value=AppDevCOE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3332",
+					"path": [
+						"cache",
+						"store",
+						"name"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "AppDevCOE",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Set key value in cache"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /cache/{:key}",
+			"request": {
+				"url": "http://localhost:3332/cache/name",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get a given key"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /cache/all",
+			"request": {
+				"url": "http://localhost:3332/cache/all/name",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get all keys"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE /nosql/user/:id",
+			"request": {
+				"url": "http://localhost:3332/nosql/user/5d829347362017353d8734e9",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDc1MjI1YTVlODM4ZTI3OWM0OWUzZmEiLCJhdmF0YXIiOiJjYXNlIiwiZW1haWwiOiJuZXdndXlAcmVkaGF0LmNvbSIsImlhdCI6MTU2Nzk1NzU5NCwiZXhwIjoxNTY3OTU4MTk0fQ.Os-M0i-PjFRc2qvypwtm75O5AC66N--0VNg4Qu8fZXkBearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDc1MjI1YTVlODM4ZTI3OWM0OWUzZmEiLCJhdmF0YXIiOiJjYXNlIiwiZW1haWwiOiJuZXdndXlAcmVkaGF0LmNvbSIsImlhdCI6MTU2Nzk1NzU5NCwiZXhwIjoxNTY3OTU4MTk0fQ.Os-M0i-PjFRc2qvypwtm75O5AC66N--0VNg4Qu8fZXk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"email\": \"user1@redhat.com\"\n }\n     "
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
